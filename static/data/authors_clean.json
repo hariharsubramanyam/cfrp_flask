@@ -508,10 +508,6 @@
     "other_names": []
   },
   {
-    "name": "François-Marie Arouet dit Voltaire",
-    "other_names": []
-  },
-  {
     "name": "Fuzelier (Louis)",
     "other_names": []
   },
@@ -1257,7 +1253,7 @@
   },
   {
     "name": "Voltaire",
-    "other_names": ["Voltaire (François-Marie Arouet dit )", "Voltaire (François-Marie Arouet dit)", "Voltaire (François-Marie Arouet, dit)"]
+    "other_names": ["Voltaire (François-Marie Arouet dit )", "Voltaire (François-Marie Arouet dit)", "Voltaire (François-Marie Arouet, dit)", "François-Marie Arouet dit Voltaire"]
   },
   {
     "name": "Ximénès (Augustin-Louis de)",
