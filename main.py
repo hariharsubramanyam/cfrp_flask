@@ -1,5 +1,5 @@
 import os
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, render_template, request
 
 app = Flask(__name__)
 
@@ -7,6 +7,15 @@ app = Flask(__name__)
 @app.route('/')
 def root():
   return render_template('index.html')
+
+@app.route("/author", methods=["POST"])
+def author():
+    AUTHOR_NAME = "authorName"
+    if AUTHOR_NAME in request.form:
+        author = request.form[AUTHOR_NAME]
+        return author
+    else:
+        return render_template("index.html")
 
 # Route for static files.
 @app.route('/<path:path>')

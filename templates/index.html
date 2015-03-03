@@ -18,9 +18,9 @@
 
   <div class="container" id="main">
     <h2>Search for your favorite author...</h2>
-    <form action="/author" class="form-inline">
-      <input id="authorName" type="text" class="form-control" placeholder="Author name..." data-provide="typeahead" autocomplete="off">
-      <button type="submit" class="btn btn-success">Search</button>
+    <form action="/author" method="POST" class="form-inline">
+      <input id="authorName" name="authorName" type="text" class="form-control" placeholder="Author name..." data-provide="typeahead" autocomplete="off">
+      <button id="goButton" type="submit" class="btn btn-success">Go</button>
     </form>
     <h2>...or find them on the timeline</h2>
     <div id="visualization"></div>
