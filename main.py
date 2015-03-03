@@ -22,7 +22,7 @@ def author():
     if AUTHOR_NAME in request.form:
         author = request.form[AUTHOR_NAME]
         if author in author_dict:
-            return json.dumps(author_dict[author])
+            return render_template("author.html", author=author_dict[author])
     return redirect(url_for("root"))
 
 # Route for static files.
