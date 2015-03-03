@@ -18,11 +18,16 @@
 
   <div class="container" id="main">
     <h2>Search for your favorite author...</h2>
+    <form action="/author" class="form-inline">
+      <input id="authorName" type="text" class="form-control" placeholder="Author name..." data-provide="typeahead" autocomplete="off">
+      <button type="submit" class="btn btn-success">Search</button>
+    </form>
     <h2>...or find them on the timeline</h2>
     <div id="visualization"></div>
   </div>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+ <script src="./js/bootstrap3-typeahead.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/3.10.0/vis.min.js"></script>
  <script src="./js/index.js"></script>
 </body>
