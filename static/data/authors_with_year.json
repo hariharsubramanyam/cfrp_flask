@@ -685,12 +685,6 @@
     "end_year": 1828
   },
   {
-    "name": "François-Marie Arouet dit Voltaire",
-    "other_names": [],
-    "start_year": 1694,
-    "end_year": 1778
-  },
-  {
     "name": "Fuzelier (Louis)",
     "other_names": [],
     "start_year": 1674,
@@ -1530,7 +1524,8 @@
     "other_names": [
       "Voltaire (François-Marie Arouet dit )",
       "Voltaire (François-Marie Arouet dit)",
-      "Voltaire (François-Marie Arouet, dit)"
+      "Voltaire (François-Marie Arouet, dit)",
+      "François-Marie Arouet dit Voltaire"
     ],
     "start_year": 1694,
     "end_year": 1778
