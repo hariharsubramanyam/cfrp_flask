@@ -21,6 +21,13 @@
     <h3>{{ author.start_year }}-{{ author.end_year }}</h3>
     <br>
     <h4>My Plays</h4>
+    {% if play_data %}
+    <ul>
+      {% for play in play_data %}
+      <li>{{ play.title }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
   </div>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
