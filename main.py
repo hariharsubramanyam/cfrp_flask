@@ -12,19 +12,26 @@ author_dict = {}
 for author in author_data:
     author_dict[author["name"]] = author
 
-def get_play_data(name):
-    try:
-        url_path = "http://cfrp-api.herokuapp.com/plays?author=eq." + name
-        r = requests.get(url_path)
-        play_data = json.loads(r.text)
-        return play_data
-    except:
-        return None
+def get_play_titles(name):
+    data = author_dict[name]
+    titles = set()
+    for n in [name] + data["other_names"]:
+        try:
+            url_path = "http://cfrp-api.herokuapp.com/plays?author=eq." + n
+            r = requests.get(url_path)
+            plays = json.loads(r.text)
+            for play in plays:
+                titles.add(play["title"])
+        except:
+            pass
+    titles = list(titles)
+    titles.sort()
+    return titles
 
 # Route for main page. 
 @app.route('/')
 def root():
-  return render_template('index.html')
+    return render_template('index.html')
 
 @app.route("/author", methods=["POST"])
 def author():
@@ -32,14 +39,14 @@ def author():
     if AUTHOR_NAME in request.form:
         author = request.form[AUTHOR_NAME]
         if author in author_dict:
-            play_data = get_play_data(author)
-            return render_template("author.html", author=author_dict[author], play_data=play_data)
+            titles = get_play_titles(author)
+            return render_template("author.html", author=author_dict[author], titles=titles)
     return redirect(url_for("root"))
 
 # Route for static files.
 @app.route('/<path:path>')
 def static_proxy(path):
-  return app.send_static_file(path)
+    return app.send_static_file(path)
 
 if __name__ == "__main__":
     app.run()
