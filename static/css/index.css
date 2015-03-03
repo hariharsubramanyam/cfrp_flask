@@ -11,6 +11,15 @@ form {
   margin-top: 70px;
 }
 
+#year {
+  width: 10%;
+}
+
+#jumpForm {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 #authorName {
   width: 50%;
 }
