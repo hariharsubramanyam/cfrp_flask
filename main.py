@@ -1,16 +1,16 @@
 import os
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
 
-# Routes
+# Route for main page. 
 @app.route('/')
 def root():
-  return app.send_static_file('index.html')
+  return render_template('index.html')
 
+# Route for static files.
 @app.route('/<path:path>')
 def static_proxy(path):
-  # send_static_file will guess the correct MIME type
   return app.send_static_file(path)
 
 if __name__ == "__main__":
